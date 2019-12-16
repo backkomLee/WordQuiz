@@ -32,6 +32,90 @@
 
 
 # 클래스별 메서드 설계
+## module word.py
+```python3
+class Word:
+    def __init__(self, en, ko, foc):
+        # 주어진 입력으로 이 단어의 영문자와 한글뜻, 그리고 이 단어가 '집중 암기'인지 설정한다.
+
+    def getStrings(self):
+        # 단어의 영문자, 한글뜻 정보를 한 번에 불러온다.
+        return self.en, self.ko
+
+    def getIsFocusing(self):
+        # 단어가 '집중 암기' 단어인지 리턴한다.
+        return self.isFocusing
+
+    def setIsFocusing(self, foc):
+        # 주어진 입력으로, 이 단어가 '집중 암기' 단어인지 아닌지를 재설정한다.
+```
+
+## module main.py
+```python3
+class WindowsManager:
+    def __init__(self):
+        # 프로그램에 쓰일 객체들(MainWindow, MemorizeWindow, WebCrawler, DataManager, PushSender)을 생성하고 세팅한다.
+
+    def memorizeModeStart(self):
+        # 암기 모드를 시작한다.
+
+    def memorizeModeEnd(self):
+        # 암기 모드를 종료한다.
+```
+
+```python3
+class MainWindow(QWidget):
+    def __init__(self):
+        # 메인 윈도우(단어 리스트 윈도우)의 GUI 요소를 세팅한다.
+
+    def showWindow()
+        # 이 윈도우, 즉 메인 윈도우 창이 나오게 한다.
+        
+    def hideWindow()
+        # 이 윈도우, 즉 메인 윈도우 창이 사라지게 한다.
+        
+    def wordAdd()
+        # 단어 리스트에 새로운 단어를 추가한다.
+        
+    def wordDelete(word)
+        # 단어 리스트에 있는 단어 중 word에 해당하는 단어를 삭제한다.
+        
+    def updateListedWords():
+        # 현재 화면에 나타난 단어 목록을 재설정한다.
+        
+    def buttonClicked():
+        # 버튼 눌림을 처리한다.
+```
+
+```python3
+class MemorizeWindow(QWidget):
+    def __init__(self):
+        # 단어 암기 윈도우의 GUI 요소를 세팅한다.
+
+    def showWindow()
+        # 이 윈도우, 즉 단어 암기 윈도우 창이 나오게 한다.
+        
+    def hideWindow()
+        # 이 윈도우, 즉 단어 암기 윈도우 창이 사라지게 한다.
+        
+    def showSearchWord(self):
+        # 인터넷에서 단어의 정보를 불러온 결과를 나타내는 레이아웃을 보이게 한다.
+
+    def hideSearchWord(self):
+        # 인터넷에서 단어의 정보를 불러온 결과를 나타내는 레이아웃을 숨긴다.
+
+    def buttonClicked(self):
+        # 버튼 눌림을 처리한다.  
+
+    def setNowWord(self, i):
+        # 지금 보여줄 단어를 설정한다.
+
+    def wordDownTextShow(self):
+        # 단어 뜻을 보이게 한다.
+
+    def wordDownTextHide(self):
+        # 단어 뜻을 숨긴다.
+```
 
 
 # 클래스별 상호작용
