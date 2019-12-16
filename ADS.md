@@ -54,7 +54,9 @@ class Word:
 ```python3
 class WindowsManager:
     def __init__(self):
-        # 프로그램에 쓰일 객체들(MainWindow, MemorizeWindow, WebCrawler, DataManager, PushSender)을 생성하고 세팅한다.
+        # 프로그램에 쓰일 객체들
+        # (MainWindow, MemorizeWindow, WebCrawler, DataManager, PushSender)
+        # 을 생성하고 세팅한다.
 
     def memorizeModeStart(self):
         # 암기 모드를 시작한다.
@@ -117,6 +119,50 @@ class MemorizeWindow(QWidget):
         # 단어 뜻을 숨긴다.
 ```
 
+## module dataManager.py
+```python3
+class DataManager:
+    def __init__(self):
+        # 변수 초기 설정을 하고, 단어 정보를 불러온다.
+
+    def readAllWords(self):
+        # 파일에서 모든 단어의 정보를 읽어온다.
+
+    def saveAllWords(self):
+        # 파일에 모든 단어의 정보를 저장한다.
+```
+
+## module webCrawler.py
+```python3
+class WebCrawler:
+    def __init__(self):
+        # 변수 초기 설정을 한다.
+
+    def searchEnglish(self, en):
+        # 주어진 인자에 해당하는 단어를 검색하고,
+        # 웹 크롤링을 통해 정보를 받아온 후 필요한 것만 걸러낸다.
+        # 정복가 잘 불러와졌는지, 단어의 인터넷 사전상 뜻은 무엇인지,
+        # 인터넷 사전에 등록된 해당 단어의 예문과 그 뜻에는 무엇이 있는지를 리턴한다.
+        return connection, means, sentences
+```
+
+## module pushSender.py
+```python3
+class PushSender:
+    def __init__(self):
+        # 변수 초기 설정을 한다.
+
+    def pushSend(word, topic)
+        # firebase 기반으로, 제목은 word의 영어, 내용은 word의 한글인
+        # 푸시 알림을 topic 토픽으로 보낸다.
+        # 해당 토픽을 구독하고 있는 앱으로 알림이 가게 된다.
+        
+    def pushSendingThreadStart(self):
+        # 지속적으로 푸시 알림을 보내는 쓰레드를 실행한다.
+        
+    def pushSendingThreadEnd(self):
+        # 지속적으로 푸시 알림을 보내는 쓰레드를 종료한다.
+```
 
 # 클래스별 상호작용
 
