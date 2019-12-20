@@ -1,0 +1,67 @@
+# 소프트웨어 상세 설계서 (DDS)
+
+## dataManager.py
+### class DataManager
+
+```python3
+    def __init__(self):
+        (list)self.words = []
+        # 모든 단어의 목록을 저장하는 리스트이다. 원소들은 Word 클래스 객체로 이루어진다.
+        
+        (list)self.focusedWords = []
+        # 모든 '집중 암기 단어'의 목록을 저장하는 리스트이다.
+        # 원소들은 Word 클래스 객체로 이루어진다.
+        
+        # readAllWords 메서드로 단어들을 불러온다.
+```
+
+```python3
+    def getWords(self):
+        # words(모든 단어를 담은 리스트)를 리턴한다.
+        return self.words
+
+    def getFocusedWords(self):
+        # focusedWords(모든 집중 암기 단어들을 담은 리스트)를 리턴한다.
+        return self.focusedWords
+```
+
+```python3
+    def wordDelete(self, word):
+        # 인자로 받는 단어를 words(모든 단어를 담은 리스트)에서 지우고,
+        # saveAllWords()를 호출해 데이터를 저장한다.
+        # 정상적으로 실행되었다면 True를 리턴한다.
+        # 만약 입력한 단어가 존재하지 않는 등 오류가 나면 False를 리턴한다.
+
+    def wordAdd(self, word):
+        # 인자로 받는 단어를 words(모든 단어를 담은 리스트) 추가하고,
+        # saveAllWords()를 호출해 데이터를 저장한다.
+```
+
+```python3
+    def saveAllWords(self):
+        # self.words에 저장된 단어의 목록을 pickle 모듈의 dump로 파일에 저장한다.
+        # 클래스 그대로 저장하지 않고,
+        # 단어의 "영어, 한글, 집중 암기 단어인지"를 담은 튜플들을 하나의 리스트에 넣은 후
+        # 그 리스트를 저장하도록 한다.
+        
+    def readAllWords(self):
+        # 파일에 저장된 단어의 목록을 pickle 모듈의 load로 불러온다.
+        # 불러온 단어 목록(튜플의 리스트)을 해석(saveAllWords 메서드 참고)하여
+        # Word 객체를 새로 만들고, 이를
+        # self.words와 self.focusedWords에 반영한다.
+```
+
+```python3
+    def saveAllSettings(self, (string)topic, (int, int)interval):
+        # topic, interval, 그리고 [(0, 0), (0, 0)]을 담은 리스트를 생성한다.
+        # topic은 푸시 알림을 보낼 토픽이다.
+        # interval은 푸시 알림 간격을 분 단위로 최소 시간과 최대 시간을 담은 튜플이다.
+        # [(0, 0), (0, 0)]은 나중에 '방해 금지 시간'을 설정할 때 사용할
+        # 변수를 미리 만든 것이다.
+        # 생성한 리스트를 pickle.dump로 저장한다.
+        
+    def readAllSettings(self):
+        # pickle.load로 설정 데이터를 가져온다.
+        # 불러온 데이터(리스트)를 해석(saveAllSettings 메서드 참고)하여
+        # topic, intervalStart, intervalEnd을 리턴한다.
+```
