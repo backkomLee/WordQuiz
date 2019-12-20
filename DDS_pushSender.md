@@ -3,7 +3,7 @@
 ## pushSender.py
 ### class PushSender
 
-```ptrhon3
+```python3
 import time
 import threading
 import random
