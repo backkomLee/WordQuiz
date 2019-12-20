@@ -163,6 +163,3 @@ class PushSender:
     def pushSendingThreadEnd(self):
         # 지속적으로 푸시 알림을 보내는 쓰레드를 종료한다.
 ```
-
-# 클래스별 상호작용
-
