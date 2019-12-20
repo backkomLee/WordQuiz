@@ -1,0 +1,22 @@
+# 소프트웨어 상세 설계서 (DDS)
+
+## wevCrawler.py
+### class WebCrawler
+
+```python3
+from daumDicParsing import *
+```
+
+```python3
+    def searchEnglish(self, (string)en):
+        # daumDicParsing에서 가져온 get_meaning_words 함수로
+        # en에 받은 단어를 다음 사전에서 검색해,
+        # 다음 사전에 나와있는 해당 단어의 뜻과
+        # 해당 단어의 예문들을 받아온다.
+        # means에 단어의 뜻을 담은 문자열 리스트를,
+        # sentences에 단어의 예문을 (영어, 한글)로 담은 튜플의 리스트를 받아온다.
+        # 중간에 에러가 났다면 connection을 False로, means와 sentences는 []로 정한다.
+        # 에러가 나지 않으면 connection은 True로 설정한다.
+
+        return connection, means, sentences
+```
