@@ -2,7 +2,7 @@
 
 ## pushSender.py
 ### class PushSender
-```
+```python3
     def __init__(self, (DataManager)dataManager, (string)topic):
         (string) self.key
         ->  파이어베이스 API 키가 저장되는 변수이다.
