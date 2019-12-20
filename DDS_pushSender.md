@@ -2,6 +2,17 @@
 
 ## pushSender.py
 ### class PushSender
+
+```ptrhon3
+import time
+import threading
+import random
+import json
+import requests
+
+from word import Word
+```
+
 ```python3
     def __init__(self, (DataManager)dataManager, (string)topic):
         # dataManager은 WindowsManager가 생성한 DataManager 객체를 받아온다.
